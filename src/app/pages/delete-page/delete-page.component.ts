@@ -38,11 +38,11 @@ export class DeletePageComponent {
       this.cargando = false;
     }
   }
-  
+
   eliminarCliente() {
     if (!this.cliente) return;
 
-    this.clientesService.deleteCliente(this.cliente.id).subscribe({
+    this.clientesService.deleteCliente(this.cliente.id!).subscribe({
       next: () => {
         alert('Cliente eliminado correctamente');
         this.router.navigate(['/clientes']);
