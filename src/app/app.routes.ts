@@ -5,11 +5,11 @@ import { ClientCardComponent } from './components/client-card/client-card.compon
 export const routes: Routes = [
   {
     path: 'home',
-    component: HomePageComponent
+    loadComponent: () => import('./pages/home-page/home-page.module')
   },
   {
     path: 'client',
-    component: ClientCardComponent
+    loadComponent: () => import('./components/client-card/client-card.component')
   },
   {
     path: '',
