@@ -1,1 +1,14 @@
-<p>delete-page works!</p>,
+<div class="clientes-eliminar-container" *ngIf="!cargando">
+  <h2>Eliminar Cliente</h2>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="cliente">
+    <p>¿Estás seguro que quieres eliminar al cliente <strong>{{ cliente.name }}</strong>?</p>
+
+    <button (click)="eliminarCliente()" class="btn btn-danger">Eliminar</button>
+    <button (click)="cancelar()" class="btn btn-secondary">Cancelar</button>
+  </div>
+</div>
+
+<div *ngIf="cargando">Cargando cliente...</div>
