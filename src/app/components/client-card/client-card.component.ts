@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-client-card',
   templateUrl: './client-card.component.html',
   styleUrls: ['./client-card.component.css'],
+  imports: [ClientCardComponent]
 })
 export class ClientCardComponent {
   @Input() client: Client = {
