@@ -11,8 +11,8 @@
 
 .client-card {
   height: 100%; 
-  margin: 30px;
-  background-color: lightgray;
+  margin: 20px;
+  background-color: rgb(230, 230, 230);
   border-radius: 15px;
   padding: 5px;
 }
