@@ -8,6 +8,7 @@
     <app-client-card
       *ngFor="let cliente of clientes"
       [cliente]="cliente"
+      [routerLink]="['/edit', cliente.id]"
     ></app-client-card>
   </div>
 </div>

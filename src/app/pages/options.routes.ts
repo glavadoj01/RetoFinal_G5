@@ -19,7 +19,7 @@ export const optionsRoutes: Routes = [
         component: CreatePageComponent
       },
       {
-        path: 'delete',
+        path: 'delete/:id',
         component: DeletePageComponent
       },
       {
