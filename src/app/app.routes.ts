@@ -5,14 +5,10 @@ import { ClientCardComponent } from './components/client-card/client-card.compon
 export const routes: Routes = [
   {
     path: 'home',
-    loadComponent: () => import('./pages/home-page/home-page.module')
+    loadChildren: () => import('./components/home/home.component')
   },
   {
     path: 'client',
-    loadComponent: () => import('./components/client-card/client-card.component')
-  },
-  {
-    path: '',
-    redirectTo: 'home',
+
   },
 ];
