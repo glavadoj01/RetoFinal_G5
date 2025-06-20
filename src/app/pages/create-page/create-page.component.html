@@ -1,1 +1,27 @@
-<p>create-page works!</p>,
+<div class="clientes-crear-container" *ngIf="!cargando">
+  <h2>Crear Cliente</h2>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <form *ngIf="!cargando" (ngSubmit)="crearCliente()">
+    <div>
+      <label for="name">Nombre:</label>
+      <input id="name" [(ngModel)]="cliente.name" name="name" required />
+    </div>
+
+    <div>
+      <label for="email">Correo:</label>
+      <input id="email" [(ngModel)]="cliente.email" name="email" required />
+    </div>
+
+    <div>
+      <label for="phone">Teléfono:</label>
+      <input id="phone" [(ngModel)]="cliente.phone" name="phone" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear Cliente</button>
+    <button (click)="cancelar()" type="button" class="btn btn-secondary">Cancelar</button>
+  </form>
+</div>
+
+<div *ngIf="cargando">Creando cliente...</div>
