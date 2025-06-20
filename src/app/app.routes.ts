@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./components/home/home.component')
+    path: 'client',
+    loadChildren: () => import('./pages/options.routes'),
   },
   {
-    path: 'client',
-
+    path: '',
+    redirectTo: 'home',
   },
 ];
