@@ -1,0 +1,22 @@
+.client-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.client-card:hover {
+  transform: scale(1.02);
+  border-color: #007bff;
+}
+
+.client-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #007bff;
+}
+
+.client-card p {
+  margin: 0.4rem 0;
+}

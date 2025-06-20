@@ -1,0 +1,18 @@
+/* Alineación con el sidebar */
+.clientes-listar-container {
+  margin-left: 200px; /* mismo ancho que el sidebar */
+  padding: 2rem;
+}
+
+/* Grid de tarjetas */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Mensajes de carga/error */
+.error {
+  color: red;
+  font-weight: bold;
+}
