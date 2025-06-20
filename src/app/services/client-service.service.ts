@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Cliente {
-  id: number;
+  id?: number; // Hacer el id opcional para cuando se crea un cliente
   name: string;
   contactEmail: string;
   revenue: number;
@@ -16,9 +16,10 @@ export interface Cliente {
 export class ClientServiceService {
   private apiUrl = 'https://clients-example-api.fly.dev/api/clients';
   private headers = new HttpHeaders({ 'x-group-id': '5' });
+  
   constructor(private http: HttpClient) {}
 
-  // GET : Obtener todos los clientes
+  // GET: Obtener todos los clientes
   getClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(this.apiUrl, { headers: this.headers });
   }
@@ -39,4 +40,8 @@ export class ClientServiceService {
     return this.http.put<Cliente>(url, cliente, { headers: this.headers });
   }
 
+  // POST: Crear nuevo cliente
+  createCliente(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(this.apiUrl, cliente, { headers: this.headers });
+  }
 }

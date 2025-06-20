@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./create-page.component.css'],
 })
 export class CreatePageComponent {
-  cliente: Cliente = { name: '', email: '', phone: '' };
+  cliente: Cliente = { name: '', contactEmail: '', revenue: 0, startDate: '' }; // Asegúrate de que el cliente tenga todos los campos
   cargando = false;
   error = '';
 
