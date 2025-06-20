@@ -1,23 +1,99 @@
+/* Estilos base mejorados para client-card */
+.client-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 1fr; /* Esto hace que todas las filas tengan la misma altura */
+  gap: 20px;
+}
+
 .client-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1.2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  height: 100%; 
+  margin: 30px;
 }
 
+
+/* Efecto hover más sofisticado */
 .client-card:hover {
-  transform: scale(1.02);
-  border-color: #007bff;
-  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: #4dabf7;
 }
 
+/* Estilo para el título */
 .client-card h3 {
-  margin: 0 0 0.5rem 0;
-  color: #007bff;
+  margin: 0 0 0.8rem 0;
+  color: #2b2d42;
+  font-size: 1.25rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
+.client-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #4dabf7;
+  border-radius: 3px;
+}
+
+/* Estilos para los párrafos */
 .client-card p {
-  margin: 0.4rem 0;
+  margin: 0.5rem 0;
+  color: #495057;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Estilo para las etiquetas strong */
+.client-card p strong {
+  color: #343a40;
+  font-weight: 500;
+}
+
+/* Efecto de acento decorativo */
+.client-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4dabf7, #339af0);
+  border-radius: 12px 0 0 12px;
+}
+
+/* Estilo para el email con icono */
+.client-card p[data-email]::before {
+  content: '✉️';
+  margin-right: 0.5rem;
+}
+
+/* Estilo para revenue con efecto de badge */
+.client-card p[data-revenue] {
+  background-color: #e6f7ff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-weight: 500;
+  color: #1971c2;
+}
+
+/* Estilo para fecha con icono */
+.client-card p[data-date]::before {
+  content: '📅';
+  margin-right: 0.5rem;
+}
+
+/* Efecto de hover para elementos internos */
+.client-card:hover h3 {
+  color: #1971c2;
+}
+
+.client-card:hover p strong {
+  color: #2b2d42;
 }
