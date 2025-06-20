@@ -18,16 +18,25 @@ export class ClientServiceService {
   private headers = new HttpHeaders({ 'x-group-id': '5' });
   constructor(private http: HttpClient) {}
 
+  // GET : Obtener todos los clientes
   getClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(this.apiUrl, { headers: this.headers });
   }
 
+  // DELETE: Eliminar cliente por ID
   deleteCliente(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`, { headers: this.headers });
   }
 
+  // GET: Obtener cliente por ID
   getCliente(id: number): Observable<Cliente> {
     return this.http.get<Cliente>(`${this.apiUrl}/${id}`, { headers: this.headers });
+  }
+
+  // PUT: Actualizar cliente
+  updateCliente(cliente: Cliente): Observable<Cliente> {
+    const url = `${this.apiUrl}/${cliente.id}`;
+    return this.http.put<Cliente>(url, cliente, { headers: this.headers });
   }
 
 }

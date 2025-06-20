@@ -1,1 +1,26 @@
-<p>edit-page works!</p>,
+<div class="edit-container" *ngIf="!cargando">
+  <h2>Editar Cliente</h2>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <form [formGroup]="clienteForm" (ngSubmit)="guardarCambios()" *ngIf="!error">
+    <label>Nombre:</label>
+    <input formControlName="name" type="text" />
+
+    <label>Email de Contacto:</label>
+    <input formControlName="contactEmail" type="email" />
+
+    <label>Ingresos (revenue):</label>
+    <input formControlName="revenue" type="number" step="0.01" />
+
+    <label>Fecha de Inicio:</label>
+    <input formControlName="startDate" type="date" />
+
+    <div class="buttons">
+      <button type="submit" class="btn btn-primary" [disabled]="clienteForm.invalid">Guardar</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="cargando">Cargando cliente...</div>
