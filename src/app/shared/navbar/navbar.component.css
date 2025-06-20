@@ -1,5 +1,6 @@
 /* Sidebar fijo en la izquierda */
 .sidebar {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
