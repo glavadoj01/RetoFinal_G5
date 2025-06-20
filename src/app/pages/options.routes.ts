@@ -2,15 +2,17 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import { CreatePageComponent } from "./create-page/create-page.component";
 import { DeletePageComponent } from "./delete-page/delete-page.component";
 import { EditPageComponent } from "./edit-page/edit-page.component";
+import { ListPageComponent } from "./list-page/list-page.component";
+import { Routes } from "@angular/router";
 
-export const optionRoutes = [
+export const optionsRoutes: Routes = [
   {
     path: '',
     component: HomePageComponent,
     children: [
       {
         path: 'list',
-        component: HomePageComponent
+        component: ListPageComponent
       },
       {
         path: 'create',
@@ -27,9 +29,10 @@ export const optionRoutes = [
       {
         path: '',
         redirectTo: 'list',
+        pathMatch: 'full' // <-- Esto es importante
       }
     ]
   }
 ]
 
-export default optionRoutes;
+export default optionsRoutes;
