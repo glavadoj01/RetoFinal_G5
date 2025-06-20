@@ -1,0 +1,55 @@
+.clientes-eliminar-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.clientes-eliminar-container h2 {
+  color: #dc3545; /* rojo para eliminar */
+  margin-bottom: 1rem;
+}
+
+.clientes-eliminar-container .error {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.clientes-eliminar-container p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+button.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}

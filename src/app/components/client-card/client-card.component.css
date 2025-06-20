@@ -1,4 +1,7 @@
 /* Estilos base mejorados para client-card */
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .client-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
