@@ -1,1 +1,13 @@
-<p>list-page works!</p>,
+<div class="clientes-listar-container">
+  <h2>Lista de Clientes</h2>
+
+  <div *ngIf="cargando">Cargando clientes...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!cargando && !error" class="card-grid">
+    <app-client-card
+      *ngFor="let cliente of clientes"
+      [cliente]="cliente"
+    ></app-client-card>
+  </div>
+</div>
