@@ -54,18 +54,24 @@ export class EditPageComponent {
       },
     });
   }
+  
   guardarCambios(): void {
     if (this.clienteForm.invalid) return;
 
     const datosActualizados: Cliente = {
       id: this.clienteId,
-      ...this.clienteForm.value,
+      ...this.clienteForm.value
     };
 
-    // Aquí iría el método de actualización (PUT) en el servicio (si existiera)
-    console.log('Cliente actualizado (simulado):', datosActualizados);
-    alert('Cliente actualizado (simulado)');
-    this.router.navigate(['/list']);
+    this.clientesService.updateCliente(datosActualizados).subscribe({
+      next: () => {
+        alert('Cliente actualizado correctamente');
+        this.router.navigate(['/list']);
+      },
+      error: () => {
+        this.error = 'Error al actualizar el cliente';
+      }
+    });
   }
 
   cancelar(): void {
