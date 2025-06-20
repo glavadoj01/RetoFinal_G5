@@ -5,6 +5,7 @@ import { Cliente } from '../../services/client-service.service';
   selector: 'app-client-card',
   templateUrl: './client-card.component.html',
   styleUrls: ['./client-card.component.css'],
+  imports: []
 })
 export class ClientCardComponent {
   @Input() cliente!: Cliente;
