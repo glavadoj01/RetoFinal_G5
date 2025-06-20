@@ -1,4 +1,7 @@
 /* Alineación con el sidebar */
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .clientes-listar-container {
   margin-left: 200px; /* mismo ancho que el sidebar */
   padding: 2rem;
