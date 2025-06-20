@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Cliente, ClientServiceService } from '../../services/client-service.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create-page',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './create-page.component.html',
   styleUrls: ['./create-page.component.css'],
 })
