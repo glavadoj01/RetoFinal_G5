@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Cliente } from '../../services/client-service.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-client-card',
   templateUrl: './client-card.component.html',
   styleUrls: ['./client-card.component.css'],
-  imports: []
+  imports: [RouterLink]
 })
 export class ClientCardComponent {
   @Input() cliente!: Cliente;
