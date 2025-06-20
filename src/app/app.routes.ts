@@ -8,7 +8,8 @@ export const routes: Routes = [
     loadChildren: () => import('./components/home/home.component')
   },
   {
-    path: 'client',
+    path: '',
+    redirectTo: 'home',
 
   },
 ];
