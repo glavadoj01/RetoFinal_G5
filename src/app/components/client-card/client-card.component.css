@@ -10,6 +10,7 @@
 .client-card:hover {
   transform: scale(1.02);
   border-color: #007bff;
+  cursor: pointer;
 }
 
 .client-card h3 {
