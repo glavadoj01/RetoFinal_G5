@@ -1,12 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Cliente {
   id: number;
   name: string;
-  email: string;
-  phone: string;
+  contactEmail: string;
+  revenue: number;
+  startDate: string; // formato ISO 8601, ejemplo: "2021-04-25T12:23:16.000Z"
 }
 
 @Injectable({
@@ -18,6 +19,10 @@ export class ClientServiceService {
   constructor(private http: HttpClient) {}
 
   getClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(this.apiUrl);
+    const headers = new HttpHeaders({
+      'x-group-id': '5' // ID del grupo al que pertenece el usuario
+    });
+
+    return this.http.get<Cliente[]>(this.apiUrl, { headers });
   }
 }
