@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface Cliente {
-  id?: number; // Hacer el id opcional para cuando se crea un cliente
+  id?: number;
   name: string;
   contactEmail: string;
   revenue: number;
-  startDate: string; // formato ISO 8601, ejemplo: "2021-04-25T12:23:16.000Z"
+  startDate: string; 
 }
 
 @Injectable({
