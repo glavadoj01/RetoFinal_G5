@@ -3,4 +3,6 @@
   <p><strong>Email:</strong> {{ cliente.contactEmail }}</p>
   <p><strong>Revenue:</strong> {{ cliente.revenue }}</p>
   <p><strong>Start Date:</strong> {{ cliente.startDate }}</p>
+  <button [routerLink]="['/edit', cliente.id]">Editar</button>
+  <button [routerLink]="['/delete', cliente.id]" routerLinkActive="router-link-active" >Eliminar</button>
 </div>
